@@ -1,0 +1,35 @@
+<head>
+	<link rel="stylesheet" href="/webapp/src/presentation-layer/public/css/layout.css">
+
+</head>
+{{#if notification}}
+<div class="notification is-{{{notificationType}}}">
+	{{{notification}}}
+</div>
+{{/if}}
+{{#if login}}
+<section class="section">
+	<a class="button is-primary is-large" href="/posts/new">New post</a>
+</section>
+{{/if}}
+
+<body>
+
+
+	{{#each posts}}
+
+	<a href="/posts/{{id}}">
+		<div class="card" id="card-class">
+
+			<span class="left"><strong>{{this.title}}</strong></span>
+			<br>
+			<br>
+			<br>
+			<p><small>Posted by {{this.username}}</small></p>
+
+		</div>
+	</a>
+
+	{{/each}}
+
+</body>

@@ -1,0 +1,53 @@
+<head>
+  <link rel="stylesheet" href="/webapp/src/presentation-layer/public/css/layout.css">
+
+</head>
+{{#if notification}}
+<div class="notification is-{{{notificationType}}}">
+  {{{notification}}}
+</div>
+{{/if}}
+<body>
+
+
+  <br>
+
+
+  <a class="button is-primary" href="/posts">Back</a>
+  <hr>
+
+  <div class="card" id="card-class">
+
+
+    <span class="left"><strong>{{post.title}}</strong></span>
+    <br>
+    <br>
+    <p>{{post.body}}</p>
+    <br>
+    <p><small>Posted by {{post.username}} </small></p>
+
+  </div>
+
+  {{#if login}}
+
+  <form action="/posts/{{post.id}}" id="comment-form" method="POST">
+
+    <textarea class="textarea-in-post" rows="10" placeholder="Write your comment here..." name="comment" id="comment"
+      {{#if comment}} value={{comment}} {{/if}}></textarea>
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    <button type="submit" class="button is-primary">Comment!</button>
+
+    <hr>
+
+  </form>
+
+  {{/if}}
+
+  {{#each comments}}
+
+  <p>{{username}}: {{comment}}</p>
+
+  {{/each}}
+
+</body>

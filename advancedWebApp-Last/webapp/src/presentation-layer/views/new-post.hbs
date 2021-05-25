@@ -1,0 +1,50 @@
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="/webapp/src/presentation-layer/public/css/layout.css">
+
+</head>
+{{#if notification}}
+<div class="notification is-{{{notificationType}}}">
+  {{{notification}}}
+</div>
+{{/if}}
+
+<body>
+
+  <div class="content">
+
+    <h2>New post</h2>
+    <p>Create a new post the form below.</p>
+
+  </div>
+
+  <form id="post-form" method="POST">
+
+    <hr>
+
+
+    <label for="title"><b>Title</b></label>
+    <input type="text" placeholder="Enter title" name="title" id="title" {{#if title}} value={{title}} {{/if}}>
+
+
+
+    <label for="body"><b>Post</b></label>
+    <textarea class="textarea-in-post" rows="10" placeholder="Write your post here..." name="body"
+      id="post">{{#if body}} {{body}} {{/if}}</textarea>
+
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    <button type="submit" class="button is-primary">Post!</button>
+
+    <hr>
+
+
+  </form>
+
+</body>
+
+
+
+</html>

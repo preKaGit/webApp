@@ -1,0 +1,56 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: rgb(225, 225, 225);
+    min-height: 100%;
+}
+
+#entire-page {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+main {
+    padding: 8px;
+}
+
+.box {
+    width: 100%
+}
+
+.section {
+    padding: 0%
+}
+
+.card {
+    padding: 1%;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.textarea-in-post {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}

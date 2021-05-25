@@ -1,0 +1,35 @@
+<head>
+	<link rel="stylesheet" href="/webapp/src/presentation-layer/public/css/layout.css">
+</head>
+{{#if notification}}
+<div class="notification is-{{{notificationType}}}">
+	{{{notification}}}
+</div>
+{{/if}}
+
+<div class="content">
+
+	<h2>Sign in</h2>
+	<p>Sign in using the form below.</p>
+
+</div>
+
+<div id="sign-in-page">
+	<form method="POST">
+		<input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+		<hr>
+
+		<label for="username"><b>Username</b></label>
+		<input type="text" placeholder="Enter username" name="username" {{#if username}} value={{username}} {{/if}}
+			required>
+
+		<label for="password"><b>Password</b></label>
+		<input type="password" placeholder="Enter password" name="password" required>
+
+		<button type="submit" class="button is-dark">Sign in!</button>
+
+		<hr>
+</div>
+
+</form>
